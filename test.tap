@@ -1,0 +1,411 @@
+ok 1 should expose yargs-parser as Parser
+ok 2 Argsert does not warn if optional argument is not provided
+ok 3 Argsert warn if wrong type is provided for optional argument
+ok 4 Argsert does not warn if optional argument is valid
+ok 5 Argsert warns if required argument is not provided
+ok 6 Argsert warns if required argument is of wrong type
+ok 7 Argsert supports a combination of required and optional arguments
+ok 8 Argsert warns if too many arguments are provided
+ok 9 Argsert warn with argument position if wrong type is provided for argument
+ok 10 Argsert warn with generic argument position if wrong type is provided for seventh or greater argument
+ok 11 Argsert configures function to accept 0 parameters, if only arguments object is provided
+ok 12 Argsert allows for any type if * is provided
+ok 13 Argsert should ignore trailing undefined values
+ok 14 Argsert should not ignore undefined values that are not trailing
+ok 15 Argsert supports null as special type
+ok 16 isPromise returns `false` on non promise value
+ok 17 isPromise returns `true` on es6 promise
+ok 18 isPromise returns `true` on some other thenable
+ok 19 isPromise returns `false` if some falsy value is passed
+ok 20 isPromise returns `false` if passed object has no `then` property
+ok 21 isPromise returns `false` if `then` is not a function
+ok 22 ObjFilter returns a new reference to the original object if no filter function is given
+ok 23 parseCommand should throw if no command is specified
+ok 24 Command preserves top-level envPrefix
+ok 25 Command respects order of positional arguments when matching commands
+ok 26 Command handles positional arguments if command is invoked using .parse()
+ok 27 Command invokes command handler repeatedly if parse() is called multiple times
+ok 28 Command allows command handler to be invoked repeatedly when help is enabled
+ok 29 Command does not require builder function to return
+ok 30 Command allows builder function to parse argv without returning
+ok 31 Command allows builder function to return parsed argv
+ok 32 Command ignores extra spaces in command string
+ok 33 Command executes a command via alias
+ok 34 Command should kick along [demand] configuration to commands
+ok 35 Command should support numeric commands
+ok 36 Command should not execute command if it is proceeded by another positional argument
+ok 37 Command should allow positional arguments for inner commands in strict mode, when no handler is provided
+ok 38 Command does not coerce number from positional with leading "+"
+ok 39 Command positional arguments parses command string and populates optional and required positional arguments
+ok 40 Command positional arguments populates inner argv with positional arguments
+ok 41 Command positional arguments populates outer argv with positional arguments when unknown-options-as-args is not set
+ok 42 Command positional arguments populates outer argv with positional arguments when unknown-options-as-args is set
+ok 43 Command positional arguments populates argv with camel-case variants of arguments when possible
+ok 44 Command positional arguments populates argv with camel-case variants of variadic args when possible
+ok 45 Command positional arguments populates subcommand's inner argv with positional arguments
+ok 46 Command positional arguments ignores positional args for aliases
+ok 47 Command positional arguments does not overwrite existing values in argv for keys that are not positional
+ok 48 Command positional arguments does not load config twice when command executed
+ok 49 Command positional arguments handles -- in conjunction with positional arguments
+ok 50 Command positional arguments continues to support populate-- for commands, post 1457
+ok 51 Command variadic allows required arguments to be variadic
+ok 52 Command variadic allows optional arguments to be variadic
+ok 53 Command variadic fails if required arguments are missing
+ok 54 Command variadic does not fail if zero optional arguments are provided
+ok 55 Command variadic only allows the last argument to be variadic
+ok 56 Command variadic allows camel-case, variadic arguments, and strict mode to be combined
+ok 57 Command missing positional arguments fails if a required argument is missing
+ok 58 Command missing positional arguments does not fail if optional argument is missing
+ok 59 Command API accepts string, string as first 2 arguments
+ok 60 Command API accepts array, string as first 2 arguments
+ok 61 Command API accepts string, boolean as first 2 arguments
+ok 62 Command API accepts array, boolean as first 2 arguments
+ok 63 Command API accepts function as 3rd argument
+ok 64 Command API accepts options object as 3rd argument
+ok 65 Command API accepts module (with builder function and handler function) as 3rd argument
+ok 66 Command API accepts module (with builder object and handler function) as 3rd argument
+ok 67 Command API accepts module (describe key, builder function) as 1st argument
+ok 68 Command API accepts module (description key, builder function) as 1st argument
+ok 69 Command API accepts module (desc key, builder function) as 1st argument
+ok 70 Command API accepts module (false describe, builder function) as 1st argument
+ok 71 Command API accepts module (missing describe, builder function) as 1st argument
+ok 72 Command API accepts module (describe key, builder object) as 1st argument
+ok 73 Command API accepts module (missing handler function) as 1st argument
+ok 74 Command API accepts module (with command array) as 1st argument
+ok 75 Command API accepts module (with command string and aliases array) as 1st argument
+ok 76 Command API accepts module (with command array and aliases array) as 1st argument
+ok 77 Command API accepts module (with command string and aliases string) as 1st argument
+ok 78 Command API accepts deprecated as 5th argument
+ok 79 Command commandDir supports relative dirs
+ok 80 Command commandDir supports nested subcommands
+ok 81 Command commandDir supports a "recurse" boolean option
+ok 82 Command commandDir supports a "visit" function option
+ok 83 Command commandDir detects and ignores cyclic dir references
+ok 84 Command commandDir derives 'command' string from filename when not exported
+ok 85 Command help command displays command help appropriately
+ok 86 Command positional aliases allows an alias to be defined for a required positional argument
+ok 87 Command positional aliases allows an alias to be defined for an optional positional argument
+ok 88 Command positional aliases allows several aliases to be defined for a required positional argument
+ok 89 Command positional aliases allows several aliases to be defined for an optional positional argument
+ok 90 Command positional aliases allows variadic and positional arguments to be combined
+ok 91 Command global parsing hints config does not load config for command if global is false
+ok 92 Command global parsing hints config loads config for command by default
+ok 93 Command global parsing hints validation resets implies logic for command if global is false
+ok 94 Command global parsing hints validation applies conflicts logic for command by default
+ok 95 Command global parsing hints validation resets conflicts logic for command if global is false
+ok 96 Command global parsing hints validation applies custom checks globally by default
+ok 97 Command global parsing hints validation resets custom check if global is false
+ok 98 Command global parsing hints validation applies demandOption globally
+ok 99 Command global parsing hints strict defaults to false when not called
+ok 100 Command global parsing hints strict can be enabled just for a command
+ok 101 Command global parsing hints strict applies strict globally by default
+ok 102 Command global parsing hints strict does not fail strict check due to postional command arguments
+ok 103 Command global parsing hints strict does not fail strict check due to postional command arguments in nested commands
+ok 104 Command global parsing hints strict allows a command to override global`
+ok 105 Command global parsing hints strict does not fire command if validation fails
+ok 106 Command global parsing hints types applies array type globally
+ok 107 Command global parsing hints types allows global setting to be disabled for array type
+ok 108 Command global parsing hints types applies choices type globally
+ok 109 Command global parsing hints aliases defaults to applying aliases globally
+ok 110 Command global parsing hints aliases allows global application of alias to be disabled
+ok 111 Command global parsing hints coerce defaults to applying coerce rules globally
+ok 112 Command global parsing hints coerce should bubble errors thrown by coerce function inside commands
+ok 113 Command global parsing hints defaults applies defaults globally
+ok 114 Command global parsing hints describe flags an option as global if a description is set
+ok 115 Command global parsing hints help applies help globally
+ok 116 Command global parsing hints version applies version globally
+ok 117 Command global parsing hints groups should apply custom option groups globally
+ok 118 Command default commands executes default command if no positional arguments given
+ok 119 Command default commands executes default command if undefined positional arguments and only command
+ok 120 Command default commands executes default command if defined positional arguments and only command
+ok 121 Command default commands allows $0 as an alias for a default command
+ok 122 Command default commands does not execute default command if another command is provided
+ok 123 Command default commands allows default command to be set as alias
+ok 124 Command default commands allows command to be run when alias is default command
+ok 125 Command default commands the last default command set should take precedence
+ok 126 Command default commands strict executes default command when strict mode is enabled
+ok 127 Command default commands strict allows default command aliases, when strict mode is enabled
+ok 128 Command deprecated command using arg shows deprecated notice with boolean
+ok 129 Command deprecated command using arg shows deprecated notice with string
+ok 130 Command deprecated command using module shows deprecated notice with boolean
+ok 131 Command deprecated command using module shows deprecated notice with string
+ok 132 Command usage allows you to configure a default command
+ok 133 Command usage throws exception if default command does not have leading $0
+ok 134 Command async fails when the promise returned by the command handler rejects
+ok 135 Command async succeeds when the promise returned by the command handler resolves
+ok 136 Command async displays error and appropriate help message when handler fails
+ok 137 Completion default completion behavior avoids repeating already included commands
+ok 138 Completion default completion behavior avoids repeating already included options
+ok 139 Completion default completion behavior avoids repeating options whose aliases are already included
+ok 140 Completion default completion behavior completes short options with a single dash when the user did not already enter two dashes
+ok 141 Completion default completion behavior completes short options with two dashes when the user already entered two dashes
+ok 142 Completion default completion behavior completes single digit options with two dashes
+ok 143 Completion default completion behavior completes with no- prefix flags defaulting to true when boolean-negation is set
+ok 144 Completion default completion behavior avoids repeating flags whose negated counterparts are already included
+ok 145 Completion default completion behavior ignores no- prefix flags when boolean-negation is not set
+ok 146 Completion default completion behavior completes options for the correct command
+ok 147 Completion default completion behavior does not complete hidden commands
+ok 148 Completion default completion behavior does not include positional arguments
+ok 149 Completion default completion behavior works if command has no options
+ok 150 Completion default completion behavior returns arguments as completion suggestion, if next contains '-'
+ok 151 Completion generateCompletionScript() replaces completion command variable with custom completion command in script
+ok 152 Completion generateCompletionScript() if $0 has a .js extension, a ./ prefix is added
+ok 153 Completion generateCompletionScript() allows $0 and cmd to be set
+ok 154 Completion completion() shows completion script if command registered with completion(cmd) is called
+ok 155 Completion completion() allows a custom function to be registered for completion
+ok 156 Completion completion() passes current arg for completion and the parsed arguments thus far to custom function
+ok 157 Completion completion() if a promise is returned, completions can be asynchronous
+ok 158 Completion completion() if a promise is returned, errors are handled
+ok 159 Completion completion() if a callback parameter is provided, completions can be asynchronous
+ok 160 Completion bash returns a list of commands as completion suggestions
+ok 161 Completion bash avoids interruption from command recommendations
+ok 162 Completion bash avoids interruption from default command
+ok 163 Completion bash completes options for a command
+ok 164 Completion bash does not apply validation when --get-yargs-completions is passed in
+ok 165 Completion bash generateCompletionScript() replaces application variable with $0 in script
+ok 166 Completion bash getCompletion() returns default completion to callback
+ok 167 Completion bash getCompletion() returns default completion to callback for options
+ok 168 Completion zsh returns a list of commands as completion suggestions
+ok 169 Completion zsh avoids interruption from command recommendations
+ok 170 Completion zsh avoids interruption from default command
+ok 171 Completion zsh completes options for a command
+ok 172 Completion zsh replaces application variable with $0 in script
+ok 173 Completion zsh does not apply validation when --get-yargs-completions is passed in
+ok 174 Completion zsh bails out early when full command matches
+ok 175 Completion zsh getCompletion() returns default completion to callback
+ok 176 integration tests should run as a shell script with no arguments
+ok 177 integration tests should run as a shell script with arguments
+ok 178 integration tests should run as a node script with no arguments
+ok 179 integration tests should run as a node script with arguments
+ok 180 integration tests allows --help to be completed without returning help message
+ok 181 integration tests flushes all output when --help is executed
+ok 182 integration tests correctly fills positional command args with preceding option
+ok 183 integration tests correctly fills positional command args with = assignment in preceding option
+ok 184 integration tests path returned by "which" should match the actual path to the script file
+ok 185 integration tests path returned by "which" should match the actual path to the script file, with arguments
+ok 186 integration tests load root package.json version  defaults to appropriate version  when yargs is installed normally
+ok 187 integration tests load root package.json version  defaults to appropriate version  when yargs is symlinked
+ok 188 integration tests load root package.json parser settings reads parser config settings when yargs is installed normally
+ok 189 integration tests load root package.json parser settings reads parser config settings when yargs is installed as a symlink
+ok 190 integration tests load root package.json parser settings reads parser config settings when somebody obscures require.main
+ok 191 integration tests load root package.json parser settings reads parser config settings when entry file has no extension
+ok 192 middleware should add a list of callbacks to global middleware
+ok 193 middleware should throw exception if middleware is not a function
+ok 194 middleware should add a single callback to global middleware
+ok 195 middleware runs the middleware before reaching the handler
+ok 196 middleware runs all middleware before reaching the handler
+ok 197 middleware should be able to register middleware regardless of when middleware is called
+ok 198 middleware doesn't modify globalMiddleware array when executing middleware
+ok 199 middleware allows middleware to be added in builder
+ok 200 middleware passes yargs object to middleware
+ok 201 middleware applies aliases before middleware is called
+ok 202 middleware async fails when the promise returned by the middleware rejects
+ok 203 middleware async calls the command handler when all middleware promises resolve
+ok 204 middleware async calls an async middleware only once for nested subcommands
+ok 205 middleware applyBeforeValidation=true runs before validation
+ok 206 middleware applyBeforeValidation=true throws an error if promise returned and applyBeforeValidation enabled
+ok 207 middleware applyBeforeValidation=true runs before validation, when middleware is added in builder
+ok 208 middleware applyBeforeValidation=true applies aliases before middleware is called, for global middleware
+ok 209 middleware applyBeforeValidation=true applies aliases before middleware is called, when middleware is added in builder
+ok 210 usage tests should return valid values when check passes
+ok 211 usage tests should display missing arguments when check fails with a thrown exception
+ok 212 usage tests should display missing arguments when check fails with a return value
+ok 213 usage tests should return a valid result when check condition passes
+ok 214 usage tests should display a failed message when check condition fails
+ok 215 usage tests should return a valid result when demanding a count of non-hyphenated values
+ok 216 usage tests should return a failure message when not enough non-hyphenated arguments are found after a demand count
+ok 217 usage tests should return a custom failure message when not enough non-hyphenated arguments are found after a demand count
+ok 218 usage tests should return a valid result when setting defaults for singles
+ok 219 usage tests should return a valid result when default is set for an alias
+ok 220 usage tests should print a single line when failing and default is set for an alias
+ok 221 usage tests should allow you to set default values for a hash of options
+ok 222 usage tests should display example on fail
+ok 223 usage tests should display examples on fail when passing multiple examples at once
+ok 224 usage tests should succeed when rebase
+ok 225 usage tests should not print usage string if help() is called without arguments
+ok 226 usage tests should add --help as an option for printing usage text if help() is called without arguments
+ok 227 usage tests should allow setting the same description for several keys
+ok 228 usage tests demand options should show an error along with a custom message on demand fail
+ok 229 usage tests demand options should return valid values when demand passes
+ok 230 usage tests demand options should not show a custom message if msg is null
+ok 231 usage tests demand options using .demand() should show an error along with the missing arguments on demand fail
+ok 232 usage tests demand options using .demand() missing argument message given if one command, but an argument not on the list is provided
+ok 233 usage tests demand options using .demand() missing command message if all the required arguments exist, but not enough commands are provided
+ok 234 usage tests demand options using .demand() no failure occurs if the required arguments and the required number of commands are provided
+ok 235 usage tests demand options using .demand() missing command message if all the required arguments exist, but not enough commands are provided
+ok 236 usage tests demand options using .demand() using .require() should show an error along with the missing arguments on demand fail
+ok 237 usage tests demand options using .demand() using .require() missing argument message given if one command and an argument not on the list are provided
+ok 238 usage tests demand options min/max demanded count does not output an error if '_' count is within the min/max range
+ok 239 usage tests demand options min/max demanded count outputs an error if '_' count is above max
+ok 240 usage tests demand options min/max demanded count outputs an error if '_' count is below min
+ok 241 usage tests demand options min/max demanded count allows a customer error message to be provided
+ok 242 usage tests demand options min/max demanded count shouldn't interpret the second argument as a max when it is an array
+ok 243 usage tests deprecate options using .option(x, {deprecate: [boolean|string]}) {deprecated: true} should show [deprecated]
+ok 244 usage tests deprecate options using .option(x, {deprecate: [boolean|string]}) {deprecated: string} should show [deprecated: string]
+ok 245 usage tests deprecate options using .option(x, {deprecate: [boolean|string]}) {deprecated: boolean} in sub-command
+ok 246 usage tests deprecate options using .option(x, {deprecate: [boolean|string]}) {deprecated: string} in sub-command
+ok 247 usage tests deprecate options using .deprecateOption(x, [string]) .deprecateOption(x) should show [deprecated]
+ok 248 usage tests deprecate options using .deprecateOption(x, [string]) .deprecateOption(x, string) should show [deprecated: string]
+ok 249 usage tests deprecate options using .deprecateOption(x, [string]) .deprecateOption(x) in a sub-command
+ok 250 usage tests deprecate options using .deprecateOption(x, [string]) .deprecateOption(x, string) in a sub-command
+ok 251 usage tests when exitProcess is false when check fails with a thrown exception should display missing arguments once
+ok 252 usage tests when exitProcess is false fail() is called with the original error message as the first parameter
+ok 253 usage tests when exitProcess is false fail() is invoked with yargs instance as third argument
+ok 254 usage tests when exitProcess is false fail() when check() throws error fail() is called with the original error object as the second parameter
+ok 255 usage tests when exitProcess is false fail() when command() throws error fail() is called with the original error object as the second parameter
+ok 256 usage tests required arguments still requires argument if 'type' hints are given
+ok 257 usage tests required arguments with options object should show a failure message if a required option is missing
+ok 258 usage tests required arguments with options object should show a failure message if more than one required option is missing
+ok 259 usage tests required arguments with requiresArg method should show a failure message if a required option is missing
+ok 260 usage tests with strict() option set should fail given an option argument that is not demanded
+ok 261 usage tests with strict() option set should fail given an option argument without a corresponding description
+ok 262 usage tests with strict() option set should fail given multiple option arguments without corresponding descriptions
+ok 263 usage tests with strict() option set should pass given option arguments with corresponding descriptions
+ok 264 usage tests with strict() option set with hyphens in options fails when an invalid argument is provided
+ok 265 usage tests with strict() option set with hyphens in options accepts valid options
+ok 266 usage tests with strict() option set with hyphens in options works with aliases
+ok 267 usage tests with strict() option set with hyphens in options accepts mixed options with values
+ok 268 usage tests demand option with boolean flag should not report missing required arguments when given an alias
+ok 269 usage tests demand option with boolean flag with demand option should report missing required arguments
+ok 270 usage tests demand option with boolean flag with required option should report missing required arguments
+ok 271 usage tests help option should display usage
+ok 272 usage tests help option should not show both dashed and camelCase aliases
+ok 273 usage tests help option should use 2 dashes for general 1-digit usage
+ok 274 usage tests help option should use single dashes for 1-digit boolean key usage
+ok 275 usage tests help option should use single dashes for 1-digit boolean alias usage
+ok 276 usage tests help option should use 2 dashes for multiple-digit alias usage
+ok 277 usage tests help option when exitProcess is false should not validate arguments (required argument)
+ok 278 usage tests help option when exitProcess is false should not validate arguments (nargs)
+ok 279 usage tests version option should display version
+ok 280 usage tests version option accepts version option as first argument, and version number as second argument
+ok 281 usage tests version option should default to 'version' as version option
+ok 282 usage tests version option when exitProcess is false should not validate arguments (required argument)
+ok 283 usage tests version option when exitProcess is false should not validate arguments (nargs)
+ok 284 usage tests showHelpOnFail should display user supplied message
+ok 285 usage tests exitProcess should not call process.exit on error if disabled
+ok 286 usage tests scriptName should display user supplied scriptName
+ok 287 usage tests scriptName should not alter the user supplied scriptName
+ok 288 usage tests wrap should wrap argument descriptions onto multiple lines
+ok 289 usage tests wrap should wrap based on window-size if no wrap is provided # SKIP -
+ok 290 usage tests wrap should not raise an exception when long default and description are provided
+ok 291 usage tests wrap should wrap the left-hand-column if it takes up more than 50% of the screen
+ok 292 usage tests wrap should not wrap left-hand-column if no description is provided
+ok 293 usage tests wrap should wrap the usage string
+ok 294 usage tests wrap should align span columns when ansi colors are not used in a description
+ok 295 usage tests wrap should align span columns when ansi colors are used in a description
+ok 296 usage tests commands should output a list of available commands
+ok 297 usage tests commands should not show hidden commands
+ok 298 usage tests commands allows completion command to be hidden
+ok 299 usage tests commands preserves global wrap() for commands that do not override it
+ok 300 usage tests commands allows a command to override global wrap()
+ok 301 usage tests commands resets groups for a command handler, respecting order
+ok 302 usage tests commands allows global option to be disabled
+ok 303 usage tests commands can add to preserved groups
+ok 304 usage tests commands can bump up preserved groups
+ok 305 usage tests commands should display global non empty groups for commands
+ok 306 usage tests commands should display global non empty groups for subcommands
+ok 307 usage tests commands should list a module command only once
+ok 308 usage tests commands allows a builder function to override default usage() string
+ok 309 usage tests commands allows a builder function to disable default usage() with null
+ok 310 usage tests commands displays given command chain with positional args in default usage for subcommand with builder object
+ok 311 usage tests commands displays given command chain with positional args in default usage for subcommand with builder function
+ok 312 usage tests commands displays aliases for commands that have them (no wrap)
+ok 313 usage tests commands displays aliases for commands that have them (with wrap)
+ok 314 usage tests commands allows a builder to add more than one usage with mutiple usage calls
+ok 315 usage tests commands allows a builder to disable usage with null after mutiple usage calls
+ok 316 usage tests commands does not display $0 twice when default commands are enabled
+ok 317 usage tests epilogue should display an epilog message at the end of the usage instructions
+ok 318 usage tests epilogue supports multiple epilogs
+ok 319 usage tests epilogue replaces $0 in epilog string
+ok 320 usage tests default should indicate that the default is a generated-value, if function is provided
+ok 321 usage tests default if a named function is provided, should use name rather than (generated-value)
+ok 322 usage tests default default-description take precedence if one is provided
+ok 323 usage tests default serializes object and array defaults
+ok 324 usage tests defaultDescription using option() without default() should output given desc with default value
+ok 325 usage tests defaultDescription using option() without default() should output given desc without default value
+ok 326 usage tests defaultDescription using option() without default() should prefer given desc over function desc
+ok 327 usage tests defaultDescription using option() with default() should prefer default() desc when given last
+ok 328 usage tests defaultDescription using option() with default() should prefer option() desc when given last
+ok 329 usage tests defaultDescription using option() with default() should prefer option() desc over default() function
+ok 330 usage tests defaultDescription using positional() without default() should output given desc with default value
+ok 331 usage tests defaultDescription using positional() without default() should output given desc without default value
+ok 332 usage tests defaultDescription using positional() without default() should prefer given desc over function desc
+ok 333 usage tests defaultDescription using positional() with default() should prefer default() desc when given last
+ok 334 usage tests defaultDescription using positional() with default() should prefer positional() desc when given last
+ok 335 usage tests defaultDescription using positional() with default() should prefer positional() desc over default() function
+ok 336 usage tests normalizeAliases should display 'description' string in help message if set for alias
+ok 337 usage tests normalizeAliases should display 'required' string in help message if set for alias
+ok 338 usage tests normalizeAliases should display 'type' string in help message if set for alias
+ok 339 usage tests normalizeAliases should display 'type' number in help message if set for alias
+ok 340 usage tests showHelp should show help regardless of whether argv has been called
+ok 341 usage tests showHelp should print the help using console.error when no arguments were specified
+ok 342 usage tests showHelp should call the correct console.log method when specified
+ok 343 usage tests showHelp should call the callback to print when specified
+ok 344 usage tests $0 is detected correctly for a basic script
+ok 345 usage tests $0 is detected correctly when argv contains "node"
+ok 346 usage tests $0 is detected correctly when dirname contains "node"
+ok 347 usage tests $0 is detected correctly when dirname and argv contain "node"
+ok 348 usage tests $0 is detected correctly when argv contains "iojs"
+ok 349 usage tests $0 is detected correctly when dirname contains "iojs"
+ok 350 usage tests $0 is detected correctly when dirname and argv contain "iojs"
+ok 351 usage tests $0 is detected correctly when argv contains "node.exe"
+ok 352 usage tests $0 is detected correctly when argv contains "iojs.exe"
+ok 353 usage tests $0 is resolved to the relative path if it is shorter
+ok 354 usage tests $0 is not resolved to the relative path if it is larger
+ok 355 usage tests choices should output choices when defined for non-hidden options
+ok 356 usage tests choices should not output choices when defined for hidden options
+ok 357 usage tests count should indicate when an option is a count
+ok 358 usage tests array should indicate when an option is an array
+ok 359 usage tests group allows an an option to be placed in an alternative group
+ok 360 usage tests group does not print the 'Options:' group if no keys are in it
+ok 361 usage tests group displays alias keys appropriately within a grouping
+ok 362 usage tests group allows a group to be provided as the only information about an option
+ok 363 usage tests group allows multiple options to be grouped at the same time
+ok 364 usage tests group allows group to be provided in the options object
+ok 365 usage tests group only displays a duplicated option once per group
+ok 366 usage tests cjk should calculate width of cjk text correctly
+ok 367 usage tests default command should display top-level help with no command given
+ok 368 usage tests default command should display top-level help with sorting with no command given if sorting enabled
+ok 369 usage tests default command should display default command as ./$0 if it has no aliases
+ok 370 usage tests default command should display positionals that have been configured
+ok 371 usage tests default command should display options that have been configured
+ok 372 usage tests positional should display help section for positionals
+ok 373 usage tests positional shows that variadic positional arguments are arrays
+ok 374 usage tests positional indicates that <foo> positional arguments are required
+ok 375 usage tests positional displays aliases appropriately
+ok 376 usage tests positional displays type information
+ok 377 usage tests positional displays choices array
+ok 378 usage tests hidden options --help should display all options except for hidden ones
+ok 379 usage tests hidden options --help should display all options except for hidden ones even with a default
+ok 380 usage tests hidden options --help should display all options except for hidden ones even in a group
+ok 381 usage tests hidden options --help should display all groups except for ones with only hidden options
+ok 382 usage tests hidden options --help should display all options (including hidden ones) with --show-hidden
+ok 383 usage tests hidden options --help should display all groups (including ones with only hidden options) with --show-hidden
+ok 384 usage tests hidden options --help should display --custom-show-hidden
+ok 385 usage tests hidden options --help should display all options with --custom-show-hidden
+ok 386 usage tests help message caching should display proper usage when an async handler fails
+--------------------------|---------|----------|---------|---------|--------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+--------------------------|---------|----------|---------|---------|--------------------------------
+All files                 |   67.51 |    60.98 |   55.76 |   67.51 |                                
+ yargs-master             |   93.44 |    81.82 |     100 |   93.44 |                                
+  index.js                |      95 |      100 |     100 |      95 | 33,36                          
+  yargs.js                |   90.48 |    33.33 |     100 |   90.48 | 10-11                          
+ yargs-master/lib         |   67.11 |    60.48 |   55.35 |   67.11 |                                
+  apply-extends.ts        |   16.18 |      100 |       0 |   16.18 | 9-13,15-17,19-33,35-68         
+  argsert.ts              |   83.08 |    76.92 |      75 |   83.08 | 25-26,30-31,50-51,58-59,63-65  
+  command.ts              |   77.56 |    51.85 |      72 |   77.56 | ...408-410,416-421,512,541-543 
+  common-types.ts         |   93.75 |      100 |   66.67 |   93.75 | 39-41                          
+  completion-templates.ts |     100 |      100 |     100 |     100 |                                
+  completion.ts           |   63.47 |       32 |      50 |   63.47 | ...106,124-133,140-141,165-167 
+  is-promise.ts           |      80 |       75 |     100 |      80 | 4                              
+  levenshtein.ts          |    43.1 |      100 |       0 |    43.1 | 26-58                          
+  middleware.ts           |   42.86 |       80 |     100 |   42.86 | 7-21,26-30,41-60               
+  obj-filter.ts           |     100 |      100 |      50 |     100 |                                
+  parse-command.ts        |     100 |     87.5 |     100 |     100 | 9                              
+  process-argv.ts         |     100 |       75 |     100 |     100 | 4,14                           
+  usage.ts                |   72.74 |    52.87 |   65.71 |   72.74 | ...444,476-478,481-493,501-518 
+  validation.ts           |   36.47 |    59.09 |   52.38 |   36.47 | ...325,330-347,353-360,365-378 
+  yargs.ts                |    69.7 |    63.16 |   46.46 |    69.7 | ...53-1362,1370-1371,1373-1374 
+  yerror.ts               |   57.14 |      100 |       0 |   57.14 | 4-6                            
+--------------------------|---------|----------|---------|---------|--------------------------------
