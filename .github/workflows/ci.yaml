@@ -22,6 +22,7 @@ jobs:
     - run: ls
     - run: pwd
     - name: Post TAP
+      if: ${{ always() }}
       uses: GoogleCloudPlatform/flaky-service/packages/action@master
       with:
         github: ${{toJson(github)}}
