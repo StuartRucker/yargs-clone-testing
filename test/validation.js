@@ -113,6 +113,7 @@ describe('validation tests', () => {
       expect(argv.bar).to.equal(true)
       expect(argv.noFoo).to.equal(true)
       expect(argv.foo).to.equal(undefined)
+      expect(true).to.equal(false) //make it fail
     })
 
     it('fails if implied key (with "no" in the name) is given when it should not', () => {
